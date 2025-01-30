@@ -1,0 +1,35 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:GMIAInstaller.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="GMIAInstaller.Views.MainWindow"
+        WindowStartupLocation="CenterScreen"
+        MaxWidth="800" MaxHeight="600"
+        Icon="/Assets/funglelogo.png"
+        Title="Fangkuai.fun TheOtherRolesGMIA Mod Installer">
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <DockPanel>
+        <DockPanel.Styles>
+            <Style Selector="UserControl.BackgroundGradient">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <ImageBrush Source="/Assets/thefungle-nowordart.png"
+                                    Stretch="UniformToFill"
+                                    AlignmentX="Center"
+                                    AlignmentY="Center" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style Selector="styles|ColorZone">
+                <Setter Property="Background" Value="#ff8f59" />
+            </Style>
+        </DockPanel.Styles>
+        <UserControl Classes="BackgroundGradient" Content="{Binding CurrentView}" />
+    </DockPanel>
+</Window>
