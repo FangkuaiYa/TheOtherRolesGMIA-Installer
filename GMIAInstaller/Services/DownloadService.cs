@@ -44,6 +44,15 @@ public static class DownloadService
 
         ZipFile.ExtractToDirectory(downloadPath, install.Location);
     }
+    public static async ValueTask DownloadTheOtherHats(GameInstall install)
+    {
+        using var httpClient = new HttpClient();
+        await using var stream = await httpClient.GetStreamAsync(
+            "https://dl.fangkuai.fun/ModFiles/TheOtherRolesGMIA/TheOtherHats.zip");
+        var downloadPath = await DownloadStreamToTempFile(stream, "TheOtherHats.zip");
+
+        ZipFile.ExtractToDirectory(downloadPath, install.Location);
+    }
 
     private static void CleanInstalledBepInEx(GameInstall install)
     {

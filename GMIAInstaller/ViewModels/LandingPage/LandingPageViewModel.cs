@@ -150,6 +150,18 @@ public class LandingPageViewModel : ViewModelBase
                         await WarnDialog.Handle($"Couldn't install Mini.RegionInstall.dll patcher to  \"{install.Location}\"");
                         return;
                     }
+                    try
+                    {
+                        await DownloadService.DownloadTheOtherHats(install);
+                    }
+                    catch (Exception)
+                    {
+                        await GameLaunchService.LaunchGame(install);
+                        IsInstallProgressing = false;
+                        await WarnDialog.Handle(GameInstall.isChinese() ? "安装TheOtherHats时出错！" : "Could not install TheOtherHats!");
+                        await WarnDialog.Handle(GameInstall.isChinese() ? "正在启动Among Us\n请等到2-3分钟\n若长时间未打开请加群787132035获得技术支持" : "Starting Among Us \n Please wait for 2-3 minutes \n If not opened for a long time, please join in \n https://discord.gg/w7msq53dq7 to ask");
+                        return;
+                    }
 
                     await GameLaunchService.LaunchGame(install);
                     IsInstallProgressing = false;
