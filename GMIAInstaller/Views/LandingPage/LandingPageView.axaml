@@ -33,14 +33,20 @@
                 Width="128"
                 IsVisible="{Binding IsInstallProgressing}"
                 DockPanel.Dock="Top" />
-            <Button Classes="Dark" Background="#ff8040"
+			<Button Classes="Dark" Background="#ff8040"
                     Width="128" Padding="12"
                     Command="{Binding InstallGame}">
-                <TextBlock FontSize="17">Install</TextBlock>
-            </Button>
-            <Image Source="/Assets/blank.png" HorizontalAlignment="Stretch" />
+				<TextBlock FontSize="17">Launch</TextBlock>
+			</Button>
+			<Image Source="/Assets/blank1.png" HorizontalAlignment="Stretch" />
+			<Button Classes="Dark" Background="#ff8040"
+                    Width="110" Padding="9"
+                    Command="{Binding CleanInstall}">
+				<TextBlock FontSize="17">Clean Install</TextBlock>
+			</Button>
+			<Image Source="/Assets/blank.png" HorizontalAlignment="Stretch" />
         </StackPanel>
-
+				
         <Panel>
             <styles:Card Background="#ea7500" Width="480" VerticalAlignment="Center">
                 <StackPanel Orientation="Vertical">

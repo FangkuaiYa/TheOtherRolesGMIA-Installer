@@ -4,7 +4,7 @@
         <TargetFramework>net8.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
         <ApplicationIcon>icon.ico</ApplicationIcon>
-        <Version>1.1.0</Version>
+        <Version>1.2.0</Version>
         <Authors>Fangkuai.fun</Authors>
         <AssemblyName>TheOtherRolesGMIA Mod Installer</AssemblyName>
         <Copyright>Fangkuai.fun Imp11</Copyright>

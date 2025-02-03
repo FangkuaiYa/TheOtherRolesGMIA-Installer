@@ -15,5 +15,6 @@ public static class Context
         ".fangkuaifun-client-launcher");
 
     public static string ConfigPath => Path.Combine(DataPath, "config.json");
+    public static string ModdedAmongUsLocation => Path.Combine(DataPath, "GMIAFiles");
     public static Configuration Configuration { get; set; } = new();
 }
