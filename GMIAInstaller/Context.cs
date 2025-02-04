@@ -7,7 +7,7 @@ namespace GMIAInstaller;
 
 public static class Context
 {
-    public static string AmongUsVersionTxt = "https://dl.fangkuai.fun/ModFiles/TheOtherRolesGMIA/AmongUsVersion.txt";
+    public static string AmongUsVersionTxt = "https://dl.fungle.icu/ModFiles/TheOtherRolesGMIA/AmongUsVersion.txt";
     public static string GMIAModPrefix { get; } = "fangkuaifun";
 
     public static string DataPath => Path.Combine(

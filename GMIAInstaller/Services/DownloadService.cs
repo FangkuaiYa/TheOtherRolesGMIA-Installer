@@ -37,7 +37,7 @@ public static class DownloadService
     {
         using var httpClient = new HttpClient();
         await using var stream = await httpClient.GetStreamAsync(
-            "https://dl.fangkuai.fun/ModFiles/TheOtherRolesGMIA/BepInEx-Unity.IL2CPP-GMIA-win-x86-6.0.0-be.725.zip");
+            "https://dl.fungle.icu/ModFiles/TheOtherRolesGMIA/BepInEx-Unity.IL2CPP-GMIA-win-x86-6.0.0-be.725.zip");
         var downloadPath = await DownloadStreamToTempFile(stream, "BepInEx-Unity.IL2CPP-GMIA-win-x86-6.0.0-be.725");
 
         CleanInstalledBepInEx(install);
@@ -48,7 +48,7 @@ public static class DownloadService
     {
         using var httpClient = new HttpClient();
         await using var stream = await httpClient.GetStreamAsync(
-            "https://dl.fangkuai.fun/ModFiles/TheOtherRolesGMIA/TheOtherHats.zip");
+            "https://dl.fungle.icu/ModFiles/TheOtherRolesGMIA/TheOtherHats.zip");
         var downloadPath = await DownloadStreamToTempFile(stream, "TheOtherHats.zip");
 
         ZipFile.ExtractToDirectory(downloadPath, install.Location);
@@ -69,19 +69,19 @@ public static class DownloadService
 
     public static async Task<Stream> DownloadGMIAPlugin()
     {
-        var req = WebRequest.CreateHttp("https://dl.fangkuai.fun/ModFiles/TheOtherRolesGMIA/TheOtherRoles.dll");
+        var req = WebRequest.CreateHttp("https://dl.fungle.icu/ModFiles/TheOtherRolesGMIA/TheOtherRoles.dll");
         return (await req.GetResponseAsync()).GetResponseStream();
     }
 
     public static async Task<Stream> DownloadReactorPlugin()
     {
-        var req = WebRequest.CreateHttp("https://dl.fangkuai.fun/ModFiles/TheOtherRolesGMIA/Reactor.dll");
+        var req = WebRequest.CreateHttp("https://dl.fungle.icu/ModFiles/TheOtherRolesGMIA/Reactor.dll");
         return (await req.GetResponseAsync()).GetResponseStream();
     }
 
     public static async Task<Stream> DownloadServerPlugin()
     {
-        var req = WebRequest.CreateHttp("https://dl.fangkuai.fun/ModFiles/TheOtherRolesGMIA/Mini.RegionInstall.dll");
+        var req = WebRequest.CreateHttp("https://dl.fungle.icu/ModFiles/TheOtherRolesGMIA/Mini.RegionInstall.dll");
         return (await req.GetResponseAsync()).GetResponseStream();
     }
 
